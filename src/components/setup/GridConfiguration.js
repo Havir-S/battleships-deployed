@@ -11,10 +11,12 @@ export default class GridConfiguration extends React.Component {
       <>
       <h2>FIELD SETTINGS</h2>
 
-      <p className='p-title'>
+      <div className='p-title'>
       Size
-      <img className='gearIcon' src={settingsIcon} alt='Show Advanced Grid Options' onClick={this.props.toggleAdvancedGridSettings} />
-      </p>
+      <div className='gearIcon-container'>
+        <img className='gearIcon' src={settingsIcon} alt='Show Advanced Grid Options' onClick={this.props.toggleAdvancedGridSettings} />
+      </div>
+      </div>
       <p className='p-settings'>
         x:
         <span className='signAction' onClick={() => this.props.gridChangeSize('y','subtract')}>-</span>

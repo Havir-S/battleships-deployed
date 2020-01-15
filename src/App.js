@@ -33,6 +33,7 @@ class App extends React.Component {
       alreadyShotByAi: [],
       alreadyShotByPlayer: [],
       allShipsHp: 0,
+      winner: '',
       gameEnded: false,
     }
     this.shipChange = this.shipChange.bind(this);
@@ -232,7 +233,7 @@ handleEnemyHit(x,y,ship) {
 
     //save the outcome
     let newHistory = this.state.actionsHistory;
-    newHistory.push(`Player shoots and hits at ${x},${y}!`);
+    newHistory.unshift(`Player shoots and hits at ${x},${y}!`);
 
     //so we can no longer hit it in the future
     let newArr = this.state.alreadyShotByPlayer;
@@ -251,7 +252,7 @@ handleEnemyHit(x,y,ship) {
 
     //save the outcome
     let newHistory = this.state.actionsHistory;
-    newHistory.push(`Player misses at ${x},${y}!`);
+    newHistory.unshift(`Player misses at ${x},${y}!`);
 
     //so we can no longer hit it in the future
     let newArr = this.state.alreadyShotByPlayer;
@@ -281,7 +282,8 @@ checkWinner() {
   });
   if (allBlocksPlayer.length === this.state.playerDeployedShips.length) {
     this.setState({
-      gameEnded: true
+      gameEnded: true,
+      winner: 'ENEMY'
     })
     return;
   }
@@ -293,7 +295,8 @@ checkWinner() {
 
   if (allBlocksAi.length === this.state.aiDeployedShips.length) {
     this.setState({
-      gameEnded: true
+      gameEnded: true,
+      winner: 'PLAYER'
     })
     return;
   }
@@ -315,11 +318,12 @@ componentDidUpdate() {
         return;
       }
 
+      // FIXME --- Somewhere in the project the values x and y overlapped, so for now a fast fix looks like this,
+      // just a simple swap back to reality
       do {
-        randomX = Math.ceil(Math.random() * this.state.field.x );
-        randomY = Math.ceil(Math.random() * this.state.field.y );
+        randomX = Math.ceil(Math.random() * this.state.field.y );
+        randomY = Math.ceil(Math.random() * this.state.field.x );
       } while (this.state.alreadyShotByAi.filter(el => (el[0] === randomX && el[1] === randomY)).length)
-
 
       let newArr;
       //check if hit any ships
@@ -335,7 +339,7 @@ componentDidUpdate() {
 
           //ALSO MAKINGA COMMENT ABOUT THE ACTIONS
           let newHistory = this.state.actionsHistory;
-          newHistory.push(`Ai shoots and hits at ${randomX},${randomY}!`);
+          newHistory.unshift(`Ai shoots and hits at ${randomX},${randomY}!`);
 
           this.checkWinner();
           //they hit, so now they can take another shot
@@ -354,7 +358,7 @@ componentDidUpdate() {
 
       //ALSO MAKINGA COMMENT ABOUT THE ACTIONS
       let newHistory = this.state.actionsHistory;
-      newHistory.push(`Ai MISSES at ${randomX},${randomY}!`);
+      newHistory.unshift(`Ai MISSES at ${randomX},${randomY}!`);
 
       // console.log(`AI MISSED with coords ${randomX},${randomY}`);
       this.setState({
@@ -466,6 +470,7 @@ componentDidUpdate() {
                  handleEnemyHit={this.handleEnemyHit}
 
                  history={this.state.actionsHistory}
+                 winner={this.state.winner}
         />
 
       );

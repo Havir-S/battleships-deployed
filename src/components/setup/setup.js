@@ -83,9 +83,15 @@ export default class Setup extends React.Component {
         case 'shipsSettingsTab':
         return (
         <div className='setup-ships'>
-          {shipConfigurations}
+          <h2>
+            SHIPS SETTINGS
           <img className='gearIcon' src={settingsIcon} alt='Show Advanced Ship Options' onClick={this.advancedShipSettingsToggle} />
-          <button onClick={this.advancedShipSettingsToggle} type="button" >Show Advanced ship options</button>
+          </h2>
+          <div className='ships-info'>
+            <div>AMOUNT</div>
+            <div>HEALTH</div>
+          </div>
+          {shipConfigurations}
           <button onClick={() => this.props.changeCurrentViewedTab(this.props.currentViewedTab,'add')} type="button" >NEXT</button>
         </div>
         )

@@ -2,6 +2,7 @@ import React from 'react';
 import battleship from '../blender/submarine.png';
 import smallCaptainAlly from '../blender/captain5.png';
 import smallCaptainEnemy from '../blender/captainEnemy1.png';
+import wheel from '../imgs/rudder.svg';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -33,7 +34,8 @@ export default class Navbar extends React.Component {
           <div className={this.state.open ? `author-div open` : `author-div`}>
             <div className='author' onClick={this.handleClick}>
               <span>Author</span>
-              <div className='arrow'/>
+
+              <img className='author-wheel' src={wheel} alt='wheel' />
             </div>
             <div className='author-links'>
               <div className='author-link-container'>

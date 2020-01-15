@@ -3,6 +3,9 @@ import GridSide from './gridSide.js';
 import Navbar from '../navbar.js';
 import MiddleBar from '../middleBar.js';
 
+import HelpDiv from './helpDiv.js';
+import questionMark from '../../imgs/question.svg';
+
 class GridElement extends React.Component {
   constructor(props) {
     super(props);
@@ -15,9 +18,7 @@ class GridElement extends React.Component {
                     onClick={(e) => {
                       this.props.handleShipClick(e);
                     }}
-                    >
-                    {`${this.props.coordX},${this.props.coordY}`}
-                    </div>
+                    />
     )
   }
 }
@@ -34,9 +35,7 @@ class GridElementShip extends React.Component {
                     onClick={(e) => {
                       this.props.handleShipClick(this.props.ship,'remove');
                     }}
-                    >
-                    {`hi`}
-                    </div>
+                    />
     )
   }
 }
@@ -52,10 +51,19 @@ export default class Grid extends React.Component {
       choosenShipClass: "",
       deploymentDirection: "x",
       shipHp: 1,
+      helpEnabled: false
     }
     this.assignShip = this.assignShip.bind(this);
     this.handleShipClick = this.handleShipClick.bind(this);
     this.handleDeploymentDirection = this.handleDeploymentDirection.bind(this);
+    this.toggleHelp = this.toggleHelp.bind(this);
+  }
+
+  //TOGGLE HELP
+  toggleHelp() {
+    this.setState({
+      helpEnabled: !this.state.helpEnabled
+    })
   }
 
   //AFTER CLICKING A SHIP
@@ -200,33 +208,30 @@ export default class Grid extends React.Component {
         <div className="ship" key={index}
                               style={{width: `${(ship.healthNumber * 30) + ( (ship.healthNumber * 5) - 5)}px`}}
                               onClick={(e) => this.assignShip(e,ship)}
-                              >
-                              {ship.name}
-        </div>
+                              />
       )
       return;
 
 
     })
 
-    // DEPLOYED SHIPS ========================================================================
-    let deployedShips = [];
 
-    this.props.playerDeployedShips.map((ship,index) => {
-      deployedShips.push(<div className="ship" key={index}
-                            style={{width: `${ship.healthNumber * 100}px`}}
-                            onClick={(e) => this.assignShip(e,ship)}
-                            >
-                            {ship.name}
-      </div>
-    )})
 
     let classWhenPlacing = (this.state.choosenShipDiv) ? 'grid-while-placing' : '';
 
+    // <div className="shipsHangar">
+    // {deployedShips}
+    // </div>
+
     return (
-      <div className='grid-tab'>
+
+    <div className='grid-tab'>
       <Navbar />
+
       <MiddleBar>
+      {this.state.helpEnabled && <HelpDiv handler={this.toggleHelp} />}
+      <div className='preparation'>
+       <div className='grid-wrap'>
         <div className={`grid ${classWhenPlacing}`}
              style={{gridTemplate:`repeat(${x}, 1fr) / repeat(${y}, 1fr)`}}
              data-direction={this.state.deploymentDirection}
@@ -247,27 +252,30 @@ export default class Grid extends React.Component {
       />
         {squares}
 
+         </div>
+        </div>
+        <div className="shipsHangar">
+        <h2>SHIPS TO DEPLOY</h2>
+          {ships}
+        </div>
       </div>
       <button onClick={() => this.props.changeCurrentViewedTab(this.props.currentViewedTab,'add')}
               disabled={(this.props.playerDeployedShips.length === this.props.playerShips.length) ? false : true}
-              type="button">
-              Go forward
+              type="button"
+              style={{margin:'0 0 65px 30px'}}
+              >
+              START THE GAME
       </button>
-      <button onClick={() => this.props.changeCurrentViewedTab(this.props.currentViewedTab,'subtract')}
-              type="button">
-              Go back
-      </button>
+      <img className='question-mark' src={questionMark} alt='question' onClick={this.toggleHelp} />
 
       <button onClick={this.handleDeploymentDirection}
+              style={{margin: '0 35px'}}
               type='button'>
+
               Current Placement Direction: {this.state.deploymentDirection}
       </button>
-      <div className="shipsHangar">
-      {ships}
-      </div>
-      <div className="shipsHangar">
-      {deployedShips}
-      </div>
+
+
       </MiddleBar>
     </div>
     )
