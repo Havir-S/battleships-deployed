@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/battleships-deployed/static/css/main.047e880b.chunk.css",
+    "main.js": "/battleships-deployed/static/js/main.1efa742b.chunk.js",
+    "main.js.map": "/battleships-deployed/static/js/main.1efa742b.chunk.js.map",
+    "runtime-main.js": "/battleships-deployed/static/js/runtime-main.855ea2e2.js",
+    "runtime-main.js.map": "/battleships-deployed/static/js/runtime-main.855ea2e2.js.map",
+    "static/js/2.fb19a0f8.chunk.js": "/battleships-deployed/static/js/2.fb19a0f8.chunk.js",
+    "static/js/2.fb19a0f8.chunk.js.map": "/battleships-deployed/static/js/2.fb19a0f8.chunk.js.map",
+    "index.html": "/battleships-deployed/index.html",
+    "precache-manifest.6c561f96328fc2f8897413d88b8a50d1.js": "/battleships-deployed/precache-manifest.6c561f96328fc2f8897413d88b8a50d1.js",
+    "service-worker.js": "/battleships-deployed/service-worker.js",
+    "static/css/main.047e880b.chunk.css.map": "/battleships-deployed/static/css/main.047e880b.chunk.css.map",
+    "static/js/2.fb19a0f8.chunk.js.LICENSE": "/battleships-deployed/static/js/2.fb19a0f8.chunk.js.LICENSE",
+    "static/media/mainStyle.scss": "/battleships-deployed/static/media/steering-wheel.66ad3dc1.svg",
+    "static/media/allyNormal.png": "/battleships-deployed/static/media/allyNormal.95d2e27f.png",
+    "static/media/allyScared.png": "/battleships-deployed/static/media/allyScared.2591bd28.png",
+    "static/media/captain5.png": "/battleships-deployed/static/media/captain5.01820855.png",
+    "static/media/captainEnemy1.png": "/battleships-deployed/static/media/captainEnemy1.eb53902c.png",
+    "static/media/enemyNormal.png": "/battleships-deployed/static/media/enemyNormal.36f8223a.png",
+    "static/media/enemyScared.png": "/battleships-deployed/static/media/enemyScared.695a8972.png",
+    "static/media/exit.svg": "/battleships-deployed/static/media/exit.427e08d5.svg",
+    "static/media/gear.svg": "/battleships-deployed/static/media/gear.d27d156d.svg",
+    "static/media/question.svg": "/battleships-deployed/static/media/question.f0a4f4fc.svg",
+    "static/media/rudder.svg": "/battleships-deployed/static/media/rudder.26779c0c.svg",
+    "static/media/submarine.png": "/battleships-deployed/static/media/submarine.35c38dee.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.855ea2e2.js",
+    "static/js/2.fb19a0f8.chunk.js",
+    "static/css/main.047e880b.chunk.css",
+    "static/js/main.1efa742b.chunk.js"
+  ]
+}
