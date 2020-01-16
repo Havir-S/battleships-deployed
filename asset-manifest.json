@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/battleships-deployed/static/css/main.047e880b.chunk.css",
+    "main.css": "/battleships-deployed/static/css/main.0251827a.chunk.css",
     "main.js": "/battleships-deployed/static/js/main.32220a67.chunk.js",
     "main.js.map": "/battleships-deployed/static/js/main.32220a67.chunk.js.map",
     "runtime-main.js": "/battleships-deployed/static/js/runtime-main.855ea2e2.js",
@@ -8,9 +8,9 @@
     "static/js/2.fb19a0f8.chunk.js": "/battleships-deployed/static/js/2.fb19a0f8.chunk.js",
     "static/js/2.fb19a0f8.chunk.js.map": "/battleships-deployed/static/js/2.fb19a0f8.chunk.js.map",
     "index.html": "/battleships-deployed/index.html",
-    "precache-manifest.689e337e5939917311cf66e9b81709fa.js": "/battleships-deployed/precache-manifest.689e337e5939917311cf66e9b81709fa.js",
+    "precache-manifest.c6ea2048cdc04a06f6c6541f8ffd1fba.js": "/battleships-deployed/precache-manifest.c6ea2048cdc04a06f6c6541f8ffd1fba.js",
     "service-worker.js": "/battleships-deployed/service-worker.js",
-    "static/css/main.047e880b.chunk.css.map": "/battleships-deployed/static/css/main.047e880b.chunk.css.map",
+    "static/css/main.0251827a.chunk.css.map": "/battleships-deployed/static/css/main.0251827a.chunk.css.map",
     "static/js/2.fb19a0f8.chunk.js.LICENSE": "/battleships-deployed/static/js/2.fb19a0f8.chunk.js.LICENSE",
     "static/media/mainStyle.scss": "/battleships-deployed/static/media/steering-wheel.66ad3dc1.svg",
     "static/media/allyNormal.png": "/battleships-deployed/static/media/allyNormal.95d2e27f.png",
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.855ea2e2.js",
     "static/js/2.fb19a0f8.chunk.js",
-    "static/css/main.047e880b.chunk.css",
+    "static/css/main.0251827a.chunk.css",
     "static/js/main.32220a67.chunk.js"
   ]
 }
