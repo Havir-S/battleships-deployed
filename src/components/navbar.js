@@ -39,7 +39,7 @@ export default class Navbar extends React.Component {
             </div>
             <div className='author-links'>
               <div className='author-link-container'>
-                <a className='link'>Github</a>
+                <a className='link' href='https://github.com/Havir-S' target="_blank">Github</a>
               </div>
               <div className='author-link-container'>
                 <a className='link'>Main Site</a>
